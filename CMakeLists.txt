@@ -3,4 +3,4 @@ project(CppNote)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(CppNote main.cpp)
+add_executable(CppNote chapter4_compute/test3.cpp)
