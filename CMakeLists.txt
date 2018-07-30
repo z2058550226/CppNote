@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 project(CppNote)
 
+aux_source_directory(. DIR_ROOT)
+
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(CppNote chapter5_error/test1.cpp)
+add_executable(CppNote chapter6_programing/test1.cpp ${DIR_ROOT})

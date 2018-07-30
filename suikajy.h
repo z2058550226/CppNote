@@ -8,12 +8,15 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <stdexcept>
 
-#define vector std::vector
-#define string std::string
-#define cin std::cin
-#define cout std::cout
-#define endl std::endl
-#define sort std::sort
+using namespace std;//没有这行就不能直接写cout而是要写std::cout
+
+//抛出异常函数
+void error(string msg);
+
+//类型强转函数
+template<typename R, typename A>
+R narrow_cast(const A &a);
 
 #endif //CPPNOTE_SUIKAJY_H
