@@ -14,3 +14,7 @@ R narrow_cast(const A &a) {
     if (A(r) != a) error(string("info loss"));
     return r;
 }
+
+void keep_window_open() {
+    getchar();
+};

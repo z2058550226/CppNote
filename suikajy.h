@@ -19,4 +19,6 @@ void error(string msg);
 template<typename R, typename A>
 R narrow_cast(const A &a);
 
+void keep_window_open();
+
 #endif //CPPNOTE_SUIKAJY_H
