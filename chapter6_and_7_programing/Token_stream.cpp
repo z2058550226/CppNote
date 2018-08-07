@@ -19,14 +19,15 @@ Token Token_stream::get() {
     cin >> ch; // note that >> sikps whitespace(space, newline, tab, etc.)
 
     switch (ch) {
-        case ';': // for "print"
-        case 'q': // for "quit"
+        case print: // for "print"
+        case quit: // for "quit"
         case '(':
         case ')':
         case '+':
         case '-':
         case '*':
         case '/':
+        case result:
             return Token(ch);//let each character represent itself
         case '.':
         case '0':
@@ -48,6 +49,15 @@ Token Token_stream::get() {
             return Token('8', val); // let '8' represent "a number"
         }
         default:
+            if (isalpha(ch)) {//检查ch是否是英文字母
+                string s;
+                s += ch;
+                //输入流cin的get和>>的作用类似，只读一个字符，但不会根据空格停止。
+                while (cin.get(ch) && (isalpha(ch) || isdigit(ch)))s += ch;
+                cin.putback(ch);
+                if (s == declkey) return Token(let);// declaration keyword
+                return Token(name, s);
+            }
             error("Bad token");
     }
 
@@ -57,4 +67,21 @@ void Token_stream::putback(Token t) {
     if (full) error("putback() into a full buffer");
     buffer = t;
     full = true;
+}
+
+// c represents the kind of Token
+void Token_stream::ignore(char c) {
+    // first look in buffer:
+    if (full && c == buffer.kind) {
+        full = false;
+        return;
+    }
+
+    full = false;
+
+    // now search input:
+
+    char ch = 0;
+    while (cin >> ch)
+        if (ch == c) return;
 }

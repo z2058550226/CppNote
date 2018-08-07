@@ -8,6 +8,11 @@ void error(string msg) {
     throw runtime_error(msg);
 }
 
+void error(string msg, string param) {
+    string error_msg = msg + ": " + param;
+    throw runtime_error(error_msg);
+}
+
 template<typename R, typename A>
 R narrow_cast(const A &a) {
     R r = R(a);
@@ -16,5 +21,22 @@ R narrow_cast(const A &a) {
 }
 
 void keep_window_open() {
-    getchar();
-};
+    cin.clear();
+    cout << "Please enter a character to exit\n";
+    char ch;
+    cin >> ch;
+    return;
+}
+
+void keep_window_open(string s) {
+    if (s == "") return;
+    cin.clear();
+    cin.ignore(120, '\n');
+    for (;;) {
+        cout << "Please enter " << s << " to exit\n";
+        string ss;
+        while (cin >> ss && ss != s)
+            cout << "Please enter " << s << " to exit\n";
+        return;
+    }
+}

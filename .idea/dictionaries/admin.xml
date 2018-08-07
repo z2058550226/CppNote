@@ -2,9 +2,11 @@
   <dictionary name="admin">
     <words>
       <w>cerr</w>
+      <w>chrono</w>
       <w>cout</w>
       <w>cppnote</w>
       <w>endl</w>
+      <w>suika</w>
       <w>suikajy</w>
     </words>
   </dictionary>
