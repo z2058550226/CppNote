@@ -8,17 +8,10 @@ void error(string msg) {
     throw runtime_error(msg);
 }
 
-void error(string msg, string param) {
-    string error_msg = msg + ": " + param;
-    throw runtime_error(error_msg);
-}
-
-template<typename R, typename A>
-R narrow_cast(const A &a) {
-    R r = R(a);
-    if (A(r) != a) error(string("info loss"));
-    return r;
-}
+//void error(string msg, string param) {
+//    string error_msg = msg + ": " + param;
+//    throw runtime_error(error_msg);
+//}
 
 void keep_window_open() {
     cin.clear();
@@ -40,3 +33,4 @@ void keep_window_open(string s) {
         return;
     }
 }
+

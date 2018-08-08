@@ -1,0 +1,3 @@
+this is the text of a.txt.
+the second row of a.txt.
+the end.
