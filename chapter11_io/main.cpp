@@ -7,6 +7,5 @@
 
 
 int main(int argc, char *argv[]) {
-    num_output();
-    return 0;
+    return test_my_code();
 }

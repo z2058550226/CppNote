@@ -6,9 +6,14 @@
 #define CPPNOTE_SUIKAJY_H
 
 #include <iostream>
+#include <sstream>
 #include <vector>
+#include <string>
 #include <algorithm>
 #include <stdexcept>
+#include <cstdlib>
+#include <list>
+#include <iomanip>
 #include <fstream>
 
 using namespace std;//没有这行就不能直接写cout而是要写std::cout

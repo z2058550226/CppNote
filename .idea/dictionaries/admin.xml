@@ -1,6 +1,7 @@
 <component name="ProjectDictionaryState">
   <dictionary name="admin">
     <words>
+      <w>addr</w>
       <w>badbit</w>
       <w>cerr</w>
       <w>chrono</w>
@@ -10,6 +11,8 @@
       <w>eofbit</w>
       <w>failbit</w>
       <w>goodbit</w>
+      <w>istream</w>
+      <w>ostream</w>
       <w>suika</w>
       <w>suikajy</w>
     </words>
