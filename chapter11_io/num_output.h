@@ -3,6 +3,7 @@
 //
 
 #include "Temperature.h"
+#include "Punct_stream.h"
 
 //用来将一个引用指向的内存表示成二进制形式
 template<class T>
@@ -119,5 +120,45 @@ int test_my_code() {
     temp.unit = "c";
     temp.temp = 38.1;
     my_code("suika", temp);
+    return 0;
+}
+
+// 字符分类
+int char_divide() {
+    char ch;
+    while (cin.get(ch)) {
+        if (isspace(ch)) { // if ch is whitespace
+            // do something
+        }
+        if (isdigit(ch)) {
+            // do something
+        } else if (isalpha(ch)) { // 判断是否是英文字母
+            // do something
+        } else {
+
+        }
+    }
+}
+
+// 自定义流
+int custom_stream() {
+    // given text input, produce a sorted list of all words in that text
+    // ignore punctuation and case differences
+    // eliminate duplicates from the output
+
+    Punct_stream ps(cin);
+    ps.whitespace(";:,.?!()\"{}<>/&$@#%^*|~"); // note \" means " in string
+    ps.case_sensitive(false);
+
+    cout << "please enter words\n";
+    vector<string> vs;
+    string word;
+    while (ps >> word) vs.push_back(word); // read words
+
+    sort(vs.begin(), vs.end());
+    for (int i = 0; i < vs.size(); ++i) {
+        if (i == 0 || vs[i] != vs[i - 1]) cout << vs[i] << endl;
+    }
+
     return 0;
 }

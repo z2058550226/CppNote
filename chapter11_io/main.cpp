@@ -7,5 +7,5 @@
 
 
 int main(int argc, char *argv[]) {
-    return test_my_code();
+    return custom_stream();
 }
