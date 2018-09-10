@@ -22,7 +22,7 @@ include_directories(./)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(CppNote ${DIR_C12} ${DIR_ROOT})
+add_executable(CppNote adb_util/main.cpp)
 
 #find_package(FLTK)
 #if (FLTK_FOUND)
